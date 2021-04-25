@@ -1,0 +1,11 @@
+{
+    "configurations": [
+    
+        {
+            "name": "ruchi_app (Flutter)",
+            "program": "lib/login.dart",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
