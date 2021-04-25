@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(36)),
                     labelText: 'Password',
-                    hintText: 'Enter Your assword'),
+                    hintText: 'Enter Your Password'),
               ),
             ),
             TextButton(
