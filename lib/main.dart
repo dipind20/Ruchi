@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './homepage.dart';
 
 void main() {
   runApp(RuchiApp());
@@ -27,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("asset/images/ruchibg.jpg"),
+            image: AssetImage("assets/images/ruchibg.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -39,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Container(
                     width: 150,
                     height: 150,
-                    child: Image.asset('asset/images/ruchi.png')),
+                    child: Image.asset('assets/images/ruchi.png')),
               ),
             ),
             Padding(
@@ -86,8 +87,8 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(36)),
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => LoginPage()));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => HomePage()));
                   },
                   child: Text(
                     'LOGIN',
