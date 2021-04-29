@@ -100,7 +100,8 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 130,
             ),
-            Text('Do not have an account? REGISTER HERE!')
+            Text('Do not have an account? REGISTER HERE!',
+                style: TextStyle(color: Colors.white)),
           ],
         ),
       ),

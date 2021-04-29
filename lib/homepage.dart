@@ -44,9 +44,57 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: Container(
-          alignment: Alignment.topCenter,
-          child: Text("Hello! I am in the container widget!!",
-              style: TextStyle(fontSize: 25)),
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  Card(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/food.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: const SizedBox(
+                        width: 190,
+                        height: 200,
+                        child: Text("FOOD ITEMS",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 25)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  Card(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/food.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: const SizedBox(
+                        width: 190,
+                        height: 200,
+                        child: Text(
+                          "FOOD ITEMS",
+                          style: TextStyle(color: Colors.white, fontSize: 25),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
