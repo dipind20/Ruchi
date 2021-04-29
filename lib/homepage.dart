@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
                   Card(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(30),
                         image: DecorationImage(
                           image: AssetImage("assets/images/food.jpg"),
                           fit: BoxFit.cover,
@@ -62,9 +62,15 @@ class HomePage extends StatelessWidget {
                       child: const SizedBox(
                         width: 190,
                         height: 200,
-                        child: Text("FOOD ITEMS",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 25)),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Text("FOOD ITEMS",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold)),
+                        ),
                       ),
                     ),
                   ),
@@ -75,7 +81,7 @@ class HomePage extends StatelessWidget {
                   Card(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(30),
                         image: DecorationImage(
                           image: AssetImage("assets/images/food.jpg"),
                           fit: BoxFit.cover,
@@ -84,9 +90,16 @@ class HomePage extends StatelessWidget {
                       child: const SizedBox(
                         width: 190,
                         height: 200,
-                        child: Text(
-                          "FOOD ITEMS",
-                          style: TextStyle(color: Colors.white, fontSize: 25),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Text(
+                            "FOOD ITEMS",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
