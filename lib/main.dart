@@ -11,6 +11,7 @@ class RuchiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ruchi App',
+      theme: ThemeData(fontFamily: 'Montserrat'),
       home: LoginPage(),
     );
   }
@@ -44,44 +45,58 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Padding(
-              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.only(
+                  left: 35.0, right: 35.0, top: 20, bottom: 0),
+              //padding: EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.email),
+                    fillColor: Color(0xFFFFFFFF).withOpacity(0.2),
+                    filled: true,
+                    prefixIcon: Icon(Icons.email, color: Color(0xFFFF5543)),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(36)),
                     labelText: 'Email',
-                    hintText: 'Enter Your Email'),
+                    labelStyle: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                    hintText: 'Enter Your Email',
+                    hintStyle: TextStyle(color: Colors.white)),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 10, bottom: 0),
-              //padding: EdgeInsets.symmetric(horizontal: 15),
+                  left: 35.0, right: 35.0, top: 10, bottom: 0),
+              //padding: EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock),
+                    fillColor: Color(0xFFFFFFFF).withOpacity(0.2),
+                    filled: true,
+                    prefixIcon: Icon(Icons.lock, color: Color(0xFFFF5543)),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(36)),
                     labelText: 'Password',
-                    hintText: 'Enter Your Password'),
+                    labelStyle: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                    hintText: 'Enter Your Password',
+                    hintStyle: TextStyle(color: Colors.white)),
               ),
             ),
             TextButton(
                 onPressed: () {
                   //TODO FORGOT PASSWORD SCREEN GOES HERE
                 },
-                child: Text('Forgot Password',
-                    style: TextStyle(color: Colors.blue, fontSize: 15),
+                child: Text('Forgot Password?',
+                    style: TextStyle(
+                        color: Color(0xFFF98A60),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
                     textAlign: TextAlign.right)),
             Padding(
-              padding:
-                  const EdgeInsets.only(left: 0, right: 0, top: 30, bottom: 0),
+              padding: const EdgeInsets.only(
+                  left: 35.0, right: 35.0, top: 30, bottom: 0),
               child: Container(
-                height: 50,
-                width: 250,
+                height: 60,
+                width: 350,
                 decoration: BoxDecoration(
                     color: const Color(0xFFA74237),
                     borderRadius: BorderRadius.circular(36)),
@@ -98,10 +113,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(
-              height: 130,
+              height: 80,
             ),
-            Text('Do not have an account? REGISTER HERE!',
-                style: TextStyle(color: Colors.white)),
+            Text('Do not have an account?',
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
+            Text('REGISTER HERE!',
+                style:
+                    TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
           ],
         ),
       ),
