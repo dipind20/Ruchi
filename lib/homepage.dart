@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(RuchiApp());
@@ -99,111 +100,233 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: Container(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0)),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                            image: AssetImage("assets/images/food.jpg"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: 190,
-                          height: 200,
-                          child: Align(
-                            alignment: FractionalOffset.bottomCenter,
-                            child: Text("FOOD ITEMS",
-                                textAlign: TextAlign.center,
+          child: Column(
+            children: [
+              Container(
+                  child: Column(
+                children: [
+                  SizedBox(height: 15.0),
+                  CarouselSlider(
+                      items: [
+                        Container(
+                          margin: EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/food1.jpg'),
+                                  fit: BoxFit.cover)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              Text(
+                                'Italian Chicken Steak',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 25,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold)),
+                                  backgroundColor: Colors.blue,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
+                        Container(
+                          margin: EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/food2.jpg'),
+                                  fit: BoxFit.cover)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              Text(
+                                'Spanish Cuisines',
+                                style: TextStyle(
+                                  backgroundColor: Colors.blue,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/food3.jpg'),
+                                  fit: BoxFit.cover)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              Text(
+                                'Mac Specials',
+                                style: TextStyle(
+                                  backgroundColor: Colors.blue,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                      options: CarouselOptions(
+                        height: 180,
+                        aspectRatio: 16 / 9,
+                        viewportFraction: 0.8,
+                        enableInfiniteScroll: true,
+                        reverse: false,
+                        autoPlay: true,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        scrollDirection: Axis.horizontal,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 0, right: 0, top: 0, bottom: 0),
+                    //padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        fillColor: Color(0xFFFFFFFF).withOpacity(0.2),
+                        filled: true,
+                        prefixIcon:
+                            Icon(Icons.search, color: Color(0xFFFF5543)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(36)),
+                        labelText: 'Search',
+                        labelStyle: TextStyle(
+                            color: Color(0xFF767676),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0)),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                            image: AssetImage("assets/images/food.jpg"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: 190,
-                          height: 200,
-                          child: Align(
-                            alignment: FractionalOffset.bottomCenter,
-                            child: Text(
-                              "FOOD ITEMS",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold),
+                  ),
+                ],
+              )),
+              Expanded(
+                child: Container(
+                  color: Color(0xFFFCEDBB),
+                  padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Column(
+                        children: [
+                          Card(
+                            elevation: 0.0,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage("assets/images/breakfast.png"),
+                                  fit: BoxFit.scaleDown,
+                                ),
+                              ),
+                              child: const SizedBox(
+                                width: 110,
+                                height: 103,
+                                child: Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Text("Breakfast",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color(0xFF767676),
+                                          fontSize: 12,
+                                          fontFamily: 'Montserrat',
+                                          fontWeight: FontWeight.w500)),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0)),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                            image: AssetImage("assets/images/food.jpg"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: 190,
-                          height: 200,
-                          child: Align(
-                            alignment: FractionalOffset.bottomCenter,
-                            child: Text(
-                              "FOOD ITEMS",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold),
+                      Column(
+                        children: [
+                          Card(
+                            elevation: 0.0,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                image: DecorationImage(
+                                  image: AssetImage("assets/images/lunch.png"),
+                                  fit: BoxFit.scaleDown,
+                                ),
+                              ),
+                              child: const SizedBox(
+                                width: 110,
+                                height: 103,
+                                child: Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Text(
+                                    "Lunch",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xFF767676),
+                                        fontSize: 12,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ),
-                  ],
+                      Column(
+                        children: [
+                          Card(
+                            elevation: 0.0,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                image: DecorationImage(
+                                  image: AssetImage("assets/images/dinner.png"),
+                                  fit: BoxFit.scaleDown,
+                                ),
+                              ),
+                              child: const SizedBox(
+                                width: 110,
+                                height: 103,
+                                child: Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Text(
+                                    "Dinner",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xFF767676),
+                                        fontSize: 12,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

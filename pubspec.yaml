@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   convex_bottom_bar: ^3.0.0
+  carousel_slider: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +52,12 @@ flutter:
     - assets/images/ruchibg.jpg
     - assets/images/food.jpg
     - assets/images/ezio.jpg
+    - assets/images/food1.jpg
+    - assets/images/food2.jpg
+    - assets/images/food3.jpg
+    - assets/images/breakfast.png
+    - assets/images/lunch.png
+    - assets/images/dinner.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -68,9 +75,11 @@ flutter:
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf
         - asset: assets/fonts/Montserrat-Italic.ttf
-          style: italic
-        - asset: assets/fonts/Montserrat-Bold.ttf
-          weight: 700  
+        - asset: assets/fonts/Montserrat-Bold.ttf 
+
+    - family: BerkshireSwash
+      fonts:  
+        - asset: assets/fonts/BerkshireSwash-Regular.tff
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
